@@ -4,109 +4,108 @@
 
 <h1 align="center">OcaPad</h1>
 
+<p align="center"><b>English</b> · <a href="README.pt-BR.md">Português</a></p>
+
 <p align="center">
-  <b>Músicas para tocar na ocarina com o controle, conferindo nota por nota.</b><br>
-  Anime, filmes, jogos e a série The Legend of Zelda, em botões do Xbox, PlayStation ou Switch.
+  <b>Songs to play on the ocarina with your controller, checked note by note.</b><br>
+  Anime, movies, games and The Legend of Zelda series, shown as Xbox, PlayStation or Switch buttons.
 </p>
 
 <p align="center">
-  🌐 <a href="https://jotaave.github.io/ocapad/"><b>Abrir o site</b></a>
-  &nbsp;·&nbsp; 🎵 <a href="https://jotaave.github.io/ocapad/criar.html">Criar uma música</a>
-  &nbsp;·&nbsp; ⬇️ <a href="../../releases/latest">Baixar a Ponte do controle</a>
+  🌐 <a href="https://oca-pad.github.io/"><b>Open the site</b></a>
+  &nbsp;·&nbsp; 🎵 <a href="https://oca-pad.github.io/criar.html">Create a song</a>
+  &nbsp;·&nbsp; ⬇️ <a href="../../releases/latest">Download the Controller Bridge</a>
 </p>
 
 ---
 
-## 💡 A ideia
+## 💡 The idea
 
-No remake de *Ocarina of Time*, a ocarina é tocada com botões. A comunidade compartilha "partituras" de músicas famosas escritas com esses botões, mas só como imagem, e quem toca não tem como saber se acertou.
+In the *Ocarina of Time* remake, the ocarina is played with buttons. The community shares "sheets" of famous songs written with those buttons, but only as images, so players can't tell whether they hit the right notes.
 
-O **OcaPad** transforma essas partituras em algo que se pode tocar e treinar:
+**OcaPad** turns those sheets into something you can play and practice:
 
-- a música aparece como uma sequência de botões, já no controle que você usa;
-- o site **lê o seu controle** e mostra cada nota como acerto ✓ ou erro ✗;
-- qualquer pessoa pode **criar uma música tocando no próprio controle** e compartilhar por link.
+- each song is a sequence of buttons, shown for the controller you use;
+- the site **reads your controller** and marks every note right ✓ or wrong ✗;
+- anyone can **create a song by playing it on their own controller** and share it with a link.
 
-Tudo é gratuito, roda no navegador e não precisa de conta para tocar.
+It's free, runs in the browser and needs no account to play.
 
 <p align="center">
-  <img src="img/exemplo-ponte.webp" alt="O jogo de um lado da tela e o OcaPad do outro, conferindo as notas" width="640"><br>
-  <sub>O jogo de um lado e o OcaPad do outro: cada nota certa fica verde.</sub>
+  <img src="img/exemplo-ponte.webp" alt="The game on one side of the screen and OcaPad on the other, checking the notes" width="640"><br>
+  <sub>The game on one side and OcaPad on the other: every right note turns green.</sub>
 </p>
 
-## ✨ O que dá para fazer
+## ✨ What you can do
 
-| Função | Como funciona |
+| Feature | How it works |
 |---|---|
-| 🎮 **Tocar e treinar** | Escolha a música, conecte o controle e toque. O site avisa o que você apertou e o que era para apertar. |
-| 🔄 **Xbox, PlayStation ou Switch** | Os botões aparecem no desenho do seu controle. As músicas são guardadas uma vez só e convertidas na hora. |
-| ⏱️ **Modo ritmo** | Grave o tempo tocando junto com o vídeo. Depois uma barra mostra a hora de cada nota: *no tempo*, *adiantado* ou *atrasado*. |
-| ✍️ **Criar música** | Toque no controle e a página escreve as notas e o ritmo. Depois é só ajustar nota por nota. |
-| 🔗 **Compartilhar por link** | A música inteira vai dentro do link, sem precisar publicar. O autor escolhe se outras pessoas podem editar uma cópia, e a cópia mantém o crédito. |
-| 📨 **Pedir publicação** | Um clique abre um pedido no GitHub; depois de aprovada, a música entra na lista do site. |
-| 🔎 **Busca** | Por nome, obra, categoria e dificuldade, sem acentos e sem maiúsculas. |
-| 🌍 **5 idiomas** | Português, English, Español, 中文 e 日本語, escolhidos pelo idioma do navegador. |
+| 🎮 **Play and practice** | Pick a song, connect your controller and play. The site tells you what you pressed and what it should have been. |
+| 🔄 **Xbox, PlayStation or Switch** | Buttons are drawn for your controller. Songs are stored once and converted on the fly. |
+| ⏱️ **Rhythm mode** | Record the timing while playing along with a video. Then a bar shows when to play each note: *on time*, *early* or *late*. |
+| ✍️ **Create a song** | Play on your controller and the page writes down the notes and the rhythm. Then fine-tune note by note. |
+| 🔗 **Share by link** | The whole song fits inside the link, no publishing needed. The author decides whether others may edit a copy, and copies keep the credit. |
+| 📨 **Request publishing** | One click opens a pre-filled request on GitHub; once approved, the song joins the site's list. |
+| 🔎 **Search** | By name, source, category and difficulty, ignoring accents and capitals. |
+| 🌍 **5 languages** | Português, English, Español, 中文 and 日本語, picked from your browser language. |
 
-## 🎼 Como ler uma nota
+## 🎼 How to read a note
 
-Cada nota mostra **primeiro o que segurar e depois o botão**, na ordem em que você faz:
+Each note shows **what to hold first, then the button**, in the order you do it:
 
-| Na tela | O que fazer |
+| On screen | What to do |
 |---|---|
-| `B` | Apertar só o botão |
-| `↓◉ + B` | Segurar o analógico esquerdo para baixo e apertar o botão |
-| `↑◉ + LB` | Segurar o analógico para cima e apertar o botão |
-| `↓◉ + ✚ + LB` | Segurar o analógico e o direcional para baixo e apertar o botão |
-| `pausa` | Nota que a ocarina não alcança: é só esperar, o site pula sozinho |
+| `B` | Press only the button |
+| `↓◉ + B` | Hold the left stick down and press the button |
+| `↑◉ + LB` | Hold the left stick up and press the button |
+| `↓◉ + ✚ + LB` | Hold the left stick and the D-pad down and press the button |
+| `rest` | A note the ocarina can't reach: just wait, the site skips it |
 
-## 🖥️ Jogando no PC? Use a Ponte do controle
+## 🖥️ Playing on PC? Use the Controller Bridge
 
-O navegador só lê o controle enquanto a janela do site está selecionada. Quando você clica no jogo, o site para de ver os botões.
+Browsers only read the controller while the site's window is selected. When you click the game, the site stops seeing the buttons.
 
-A **Ponte do controle** é um programinha para Windows (19 KB) que lê o controle direto do sistema, como o emulador faz, e repassa os botões ao site. Assim as notas são conferidas **com o jogo em foco**.
+The **Controller Bridge** is a tiny Windows program (19 KB) that reads the controller straight from the system, like the emulator does, and passes the buttons to the site. Notes are checked **while the game has focus**.
 
-1. Baixe o `ponte-controle.exe` na página [Releases](../../releases/latest) e abra.
-2. Abra o OcaPad: na barra de treino aparece **"Ponte conectada"**.
-3. Clique no jogo e toque.
+1. Download `ponte-controle.exe` from [Releases](../../releases/latest) and open it.
+2. Open OcaPad: the practice bar shows **"Bridge connected"**.
+3. Click the game and play.
 
-> 🔒 A ponte não usa a internet: só conversa com o seu computador e só aceita o site OcaPad. Como não tem assinatura digital, o Windows pode avisar "O Windows protegeu o computador". Clique em **Mais informações → Executar assim mesmo**. O código está em [`ponte-controle/Ponte.cs`](ponte-controle/Ponte.cs).
+> 🔒 The bridge doesn't use the internet: it only talks to your own computer and only accepts the OcaPad site. Since it isn't digitally signed, Windows may say "Windows protected your PC". Click **More info → Run anyway**. The source is in [`ponte-controle/Ponte.cs`](ponte-controle/Ponte.cs).
 
-Funciona com controles que o Windows vê como Xbox (o de PlayStation e o Pro do Switch via DS4Windows ou Steam).
+Works with controllers Windows sees as Xbox (PlayStation and Switch Pro through DS4Windows or Steam).
 
-## 📨 Enviar uma música
+## 📨 Submit a song
 
-1. No site, abra **Criar música**, grave e ajuste.
-2. Clique em **Testar** para ver como os outros vão ver.
-3. Clique em **Pedir publicação no site**. Abre um pedido (*issue*) já preenchido aqui no GitHub (precisa de uma conta grátis).
-4. Depois de aprovada, a música aparece na lista.
+1. On the site, open **Create a song**, record and adjust.
+2. Click **Test** to see it the way others will.
+3. Click **Request publishing**. A pre-filled request (*issue*) opens here on GitHub (a free account is needed).
+4. Once approved, the song shows up in the list.
 
-Para usar sem publicar, basta **Copiar link com a música dentro**.
+To use a song without publishing it, just **Copy the link with the song inside**.
 
-## 🗂️ Como o projeto é organizado
+## 🗂️ Project layout
 
 ```
-ocapad/
-├── index.html, tocar.html, criar.html   as três páginas
-├── musicas/                             um arquivo .json por música
-├── js/                                  funcionamento (busca, leitura do controle, idiomas…)
-├── css/  img/                           aparência, logo e imagens
-├── scripts/                             gera a lista de músicas e aprova pedidos
-├── ponte-controle/                      código da Ponte do controle (Windows)
-└── .github/workflows/                   publicação automática, aprovação e geração do .exe
+├── index.html, tocar.html, criar.html   the three pages (list, play, create)
+├── musicas/                             one .json file per song
+├── js/                                  logic (search, controller reading, languages…)
+├── css/  img/                           styles, logo and images
+├── scripts/                             builds the song list and approves requests
+├── ponte-controle/                      Controller Bridge source (Windows)
+└── .github/workflows/                   automatic publishing, approval and .exe build
 ```
 
-- Cada música é um arquivo simples em [`musicas/`](musicas/). O formato está explicado em [COMO-PUBLICAR.md](COMO-PUBLICAR.md#adicionar-uma-música).
-- A cada mudança, uma automação gera a lista de músicas e publica o site no GitHub Pages.
-- Para aprovar um pedido de música, basta colocar a etiqueta **`aprovada`** na issue.
+- Each song is a small file in [`musicas/`](musicas/). The format is described in [COMO-PUBLICAR.md](COMO-PUBLICAR.md) (Portuguese).
+- On every change, an automation builds the song list and publishes the site on GitHub Pages.
+- To approve a song request, add the **`aprovada`** label to the issue.
 
-**Para ver no seu PC:** dê dois cliques em `abrir-site.bat` (precisa do [Node.js](https://nodejs.org)).
+**To run it on your PC:** double-click `abrir-site.bat` (requires [Node.js](https://nodejs.org)).
 
-Os detalhes de publicação, aprovação e ponte estão em **[COMO-PUBLICAR.md](COMO-PUBLICAR.md)**.
+## ⚖️ Notice
 
-## ⚖️ Aviso
+OcaPad is a free **fan site**, not affiliated with Nintendo or any game company. *The Legend of Zelda* and *Nintendo* are trademarks of Nintendo. The site only shows button orders, with no audio or images from the games, and the names of works belong to their owners.
 
-O OcaPad é um **site de fãs**, gratuito e sem ligação com a Nintendo ou com qualquer empresa de jogos. *The Legend of Zelda* e *Nintendo* são marcas da Nintendo. O site mostra só a ordem dos botões, sem áudio nem imagens dos jogos, e os nomes das obras pertencem aos seus donos.
+To request the removal of a song, [open a request here](../../issues/new?title=Removal%20request).
 
-Para pedir a remoção de alguma música, [abra um pedido aqui](../../issues/new?title=Pedido%20de%20remo%C3%A7%C3%A3o).
-
-<p align="center"><sub>Feito com ♪ por quem gosta de tocar ocarina com o controle.</sub></p>
+<p align="center"><sub>Made with ♪ by people who like playing the ocarina with a controller.</sub></p>

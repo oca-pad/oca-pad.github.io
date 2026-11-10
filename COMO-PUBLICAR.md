@@ -13,7 +13,7 @@ Para parar, feche a janela preta. (Precisa do Node.js, que já está instalado n
 4. **Enviar:** clique em **Publish repository**. No campo **Name**, escreva `ocapad` (é o que aparece no endereço). **Desmarque** "Keep this code private" (o GitHub Pages grátis precisa de repositório público) e confirme.
 5. **Ligar o site:** em github.com, abra o repositório → **Settings** → **Pages** → em **Source**, escolha **GitHub Actions**.
 6. **Primeira publicação:** vá na aba **Actions** do repositório, clique em **Publicar site** → **Run workflow**.
-   Em 1 ou 2 minutos aparece um ✅. O endereço fica assim: `https://jotaave.github.io/ocapad/`
+   Em 1 ou 2 minutos aparece um ✅. O endereço do site é `https://oca-pad.github.io/` (repositório `oca-pad.github.io` na organização `oca-pad` do GitHub).
 
 Daqui pra frente, toda vez que você enviar uma mudança pelo GitHub Desktop (**Commit** e depois **Push origin**), o site se atualiza sozinho.
 Se uma música estiver escrita errado, a publicação para e mostra o erro na aba **Actions** (o site antigo continua no ar).
