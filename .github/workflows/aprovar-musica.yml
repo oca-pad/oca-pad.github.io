@@ -1,0 +1,54 @@
+# Quando o dono do site coloca a etiqueta "aprovada" num pedido de música (issue),
+# a música é gravada em musicas/, o site é publicado de novo e o pedido é fechado.
+# Só quem administra o repositório consegue colocar etiquetas, então só você aprova.
+name: Aprovar música
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  aprovar:
+    if: github.event.label.name == 'aprovada'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      NUMERO: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Ler a música do pedido
+        id: musica
+        env:
+          CORPO: ${{ github.event.issue.body }}
+          AUTOR: ${{ github.event.issue.user.login }}
+        run: node scripts/aprovar-musica.js
+      - name: Conferir o índice
+        run: node scripts/gerar-indice.js && rm -f indice.json
+      - name: Salvar no repositório
+        env:
+          TITULO: ${{ steps.musica.outputs.titulo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add musicas/
+          git commit -m "Nova música: $TITULO (pedido #$NUMERO)"
+          git push
+      - name: Publicar o site e fechar o pedido
+        env:
+          ID: ${{ steps.musica.outputs.id }}
+        run: |
+          gh workflow run publicar.yml --ref "${{ github.event.repository.default_branch }}"
+          gh issue comment "$NUMERO" --body "Aprovada! A música vai aparecer no site em 1 ou 2 minutos (arquivo musicas/$ID.json). Obrigado!"
+          gh issue close "$NUMERO"
+      - name: Avisar se deu erro
+        if: failure()
+        run: gh issue comment "$NUMERO" --body "Não consegui aprovar automaticamente. O dono do site vai olhar o erro na aba Actions."

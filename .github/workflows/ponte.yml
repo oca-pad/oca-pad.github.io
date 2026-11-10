@@ -1,0 +1,34 @@
+# Gera o ponte-controle.exe e publica para download na página "Releases" do repositório.
+# Para lançar: aba Actions → "Gerar ponte do controle" → Run workflow (escolha a versão, ex.: 1.0.0).
+name: Gerar ponte do controle
+
+on:
+  workflow_dispatch:
+    inputs:
+      versao:
+        description: "Versão (ex.: 1.0.0)"
+        required: true
+        default: "1.0.0"
+
+permissions:
+  contents: write
+
+jobs:
+  gerar:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      VERSAO: ${{ inputs.versao }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compilar
+        shell: cmd
+        run: |
+          cd ponte-controle
+          "%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /out:ponte-controle.exe /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.Net.dll Ponte.cs
+      - name: Publicar na página de downloads
+        shell: bash
+        run: |
+          gh release create "ponte-v$VERSAO" ponte-controle/ponte-controle.exe \
+            --title "Ponte do controle $VERSAO" \
+            --notes "Baixe o ponte-controle.exe, abra e depois abra o site. Assim o site confere as notas mesmo com o jogo em foco. Se o Windows avisar 'O Windows protegeu o computador', clique em 'Mais informações' e 'Executar assim mesmo' (o programa não é assinado)."

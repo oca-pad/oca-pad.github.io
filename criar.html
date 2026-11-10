@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Criar música · OcaPad</title>
+<link rel="icon" type="image/svg+xml" href="img/ocarina.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Rubik:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/movimento.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <a class="marca" href="./" aria-label="OcaPad"><img class="logo-img" src="img/ocarina.svg" alt="" width="46" height="39"><span class="marca-nome">OcaPad</span></a>
+    <div class="topo-dir">
+      <a class="botao" href="./" data-t="voltarLista">← Músicas</a>
+      <div class="seletor-controle" id="controle"></div>
+      <div class="idioma-menu" id="idiomaMenu"></div>
+    </div>
+  </header>
+
+  <main class="pilha">
+    <div class="cabecalho">
+      <h1 data-t="criarTitulo">Criar música</h1>
+      <p class="sub" data-t="criarSub">Toque no controle junto com o vídeo: a página escreve as notas e o ritmo. Depois é só ajustar. Tudo fica salvo neste navegador.</p>
+    </div>
+
+    <div class="minhas">
+      <label><span data-t="minhas">Minhas músicas</span> <select id="minhas"></select></label>
+      <button type="button" class="botao" id="nova" data-t="nova">+ Nova</button>
+      <button type="button" class="botao perigo secundario" id="apagarMusica" data-t="apagarEsta">Apagar esta</button>
+      <span class="aviso-copia" id="salvo" role="status"></span>
+    </div>
+
+    <section class="cartao-bloco pilha" aria-labelledby="passo1" style="gap: var(--s4)">
+      <h2 class="secao-titulo" id="passo1" data-t="passo1">1 · Dados da música</h2>
+      <div class="dados">
+        <label class="campo"><span><span data-t="f_titulo">Título</span> <span class="obrigatorio" aria-hidden="true">*</span></span>
+          <input type="text" id="titulo" maxlength="100" placeholder="Ex.: Abertura de Pokémon" data-t-ph="f_tituloPh" required aria-describedby="erroTitulo">
+          <span class="erro-campo" id="erroTitulo" role="alert"></span>
+        </label>
+        <label class="campo"><span data-t="f_origem">De onde é</span>
+          <input type="text" id="origem" maxlength="100" placeholder="Anime, filme, jogo…" data-t-ph="f_origemPh">
+        </label>
+        <label class="campo"><span data-t="f_categoria">Categoria</span> <select id="categoria"></select></label>
+        <label class="campo"><span data-t="f_nome">Seu nome no site</span>
+          <input type="text" id="enviado" maxlength="60" placeholder="Como quer aparecer" data-t-ph="f_nomePh">
+        </label>
+        <fieldset class="redes-campo largo">
+          <legend data-t="redesTit">Suas redes sociais (opcional)</legend>
+          <div id="redesLista" class="redes-lista"></div>
+          <button type="button" class="botao" id="addRede" data-t="addRede">+ Adicionar rede</button>
+          <p class="ajuda" data-t="redesAjuda">Aparecem na página da música. Escreva só o @usuário (ou cole o link do perfil). Até 5.</p>
+        </fieldset>
+        <label class="campo largo"><span data-t="f_tags">Palavras para a busca</span>
+          <input type="text" id="tags" maxlength="200" placeholder="separadas por vírgula" data-t-ph="f_tagsPh">
+        </label>
+        <label class="campo largo"><span data-t="f_obs">Observações</span>
+          <textarea id="obs" rows="2" maxlength="600" placeholder="Dicas para quem for tocar (opcional)" data-t-ph="f_obsPh"></textarea>
+        </label>
+      </div>
+      <p class="ajuda"><span class="obrigatorio" aria-hidden="true">*</span> <span data-t="obrigatorioAjuda">campo obrigatório</span></p>
+    </section>
+
+    <h2 class="secao-titulo" id="passo2" data-t="passo2" style="margin:0">2 · Gravar e ajustar as notas</h2>
+    <section class="coach" id="coach" aria-labelledby="passo2">
+      <div class="coach-top">
+        <span class="pad" id="pad"><span class="dot" aria-hidden="true"></span><span id="padText" data-t="padNao">Controle não detectado: aperte qualquer botão do controle</span></span>
+        <a class="link-ponte" id="baixarPonte" data-ponte href="ponte-controle/ponte-controle.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="ponteCurto">Jogar com o jogo em foco? Baixe a ponte (Windows)</span></a>
+        <span class="score" id="contagem"></span>
+      </div>
+      <div class="msg" id="msg" role="status" aria-live="polite" data-t="msgInicial">Aperte "Gravar do zero" e toque a música no controle.</div>
+      <div class="coach-acoes">
+        <button type="button" class="botao principal" id="gravarZero" data-t="gravarZero">● Gravar do zero</button>
+        <button type="button" class="botao" id="gravarFim" data-t="gravarFim">● Continuar gravando no fim</button>
+        <button type="button" class="botao principal" id="parar" hidden data-t="parar">■ Parar</button>
+      </div>
+      <details class="recolhe">
+        <summary data-t="opcoesGravacao">Opções de gravação</summary>
+        <div class="recolhe-corpo opts">
+          <label><span data-t="corteA">Frase nova depois de</span> <input type="number" id="corte" min="0.5" max="10" step="0.1" value="1.5" class="num"> <span data-t="corteB">s parado</span></label>
+          <label><input type="checkbox" id="temRitmo"> <span data-t="temRitmo">Esta música tem ritmo</span></label>
+        </div>
+      </details>
+    </section>
+
+    <div class="legend" id="legenda" aria-label="Legenda" data-t-aria="legenda"></div>
+
+    <div id="partitura" class="pilha"></div>
+
+    <section class="painel" id="painel" hidden aria-labelledby="painelTitulo">
+      <h2 id="painelTitulo">Nota</h2>
+      <div class="painel-campos">
+        <label><span data-t="p_botao">Botão</span> <select id="pBotao"></select></label>
+        <label><span data-t="p_seg">Segurando</span> <select id="pMod"></select></label>
+        <label id="pEsperaLabel"><span data-t="p_espera">Espera antes dela</span>
+          <span class="espera-ajuste">
+            <button type="button" class="botao mini-b" data-delta="-0.05" aria-label="−0,05 s" data-t-aria="menos005">−</button>
+            <input type="number" id="pEspera" min="0" max="20" step="0.05" class="num"> s
+            <button type="button" class="botao mini-b" data-delta="0.05" aria-label="+0,05 s" data-t-aria="mais005">+</button>
+          </span>
+        </label>
+        <label><input type="checkbox" id="pFrase"> <span data-t="p_frase">Começa uma frase nova aqui</span></label>
+      </div>
+      <div class="coach-acoes">
+        <button type="button" class="botao" id="pNotaAntes" data-t="p_notaAntes">+ Nota antes</button>
+        <button type="button" class="botao" id="pPausaAntes" data-t="p_pausaAntes">+ Pausa antes</button>
+        <button type="button" class="botao" id="pRegravar" data-t="p_regravar">● Regravar a partir daqui</button>
+        <button type="button" class="botao perigo" id="pApagar" data-t="p_apagar">Apagar nota</button>
+        <button type="button" class="botao secundario" id="pFechar" data-t="p_fechar">Fechar</button>
+      </div>
+      <p class="ajuda" data-t="p_dica">Dica: com uma nota escolhida, apertar um botão no controle troca a nota.</p>
+    </section>
+
+    <div class="coach-acoes">
+      <button type="button" class="botao" id="addNota" data-t="addNota">+ Nota no fim</button>
+      <button type="button" class="botao" id="addPausa" data-t="addPausa">+ Pausa no fim</button>
+    </div>
+
+    <section class="cartao-bloco acoes pilha" aria-labelledby="passo3" style="gap: var(--s3)">
+      <h2 class="secao-titulo" id="passo3" data-t="passo3" style="margin:0">3 · Testar e publicar</h2>
+      <p data-t="pronta" style="margin:0"><b>Pronta?</b> Teste do jeito que os outros vão ver e, se estiver boa, peça a publicação.</p>
+      <label class="permitir"><input type="checkbox" id="permitirEdicao"> <span data-t="permitirEdicao">Permitir que outras pessoas editem uma cópia</span></label>
+      <p class="ajuda" data-t="permitirEdicaoAjuda" style="margin-top:-6px">Desmarcado: quem abrir o link ou a página só toca.</p>
+      <div class="compartilhar">
+        <button type="button" class="botao" id="testar" data-t="testar">▶ Testar</button>
+        <button type="button" class="botao" id="copiarLink" data-t="copiarLinkCompleto">Copiar link com a música dentro</button>
+        <button type="button" class="botao principal" id="publicar" data-t="pedirPub">Pedir publicação no site</button>
+        <span class="aviso-copia" id="avisoCopia" role="status"></span>
+      </div>
+      <p class="ajuda" id="publicarInfo" data-t="pubInfo">O pedido abre no GitHub (precisa de uma conta grátis). A música aparece no site depois de aprovada.</p>
+    </section>
+  </main>
+
+  <footer></footer>
+</div>
+<script type="module" src="js/criar.js"></script>
+</body>
+</html>

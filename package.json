@@ -1,0 +1,9 @@
+{
+  "name": "ocapad",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "indice": "node scripts/gerar-indice.js",
+    "local": "node scripts/gerar-indice.js && node scripts/servidor-local.js"
+  }
+}

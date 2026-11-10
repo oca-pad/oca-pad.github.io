@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OcaPad</title>
+<meta name="description" content="Músicas de anime, filme e jogo para tocar na ocarina com o controle, conferindo nota por nota.">
+<link rel="icon" type="image/svg+xml" href="img/ocarina.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Rubik:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/movimento.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <a class="marca" href="./" aria-label="OcaPad"><img class="logo-img" src="img/ocarina.svg" alt="" width="46" height="39"><span class="marca-nome">OcaPad</span></a>
+    <div class="topo-dir">
+      <a class="botao principal" href="criar.html" data-t="criarLink">+ Criar música</a>
+      <div class="seletor-controle" id="controle"></div>
+      <div class="idioma-menu" id="idiomaMenu"></div>
+    </div>
+  </header>
+
+  <main class="pilha">
+    <div class="cabecalho">
+      <h1 data-t="listaTitulo">Músicas para tocar na ocarina</h1>
+      <p class="sub" data-t="listaSub">Escolha uma música, conecte o controle e a página confere cada nota que você toca.</p>
+      <a class="faixa-ponte" id="baixarPonte" data-ponte href="ponte-controle/ponte-controle.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="ponteCurto">Jogar com o jogo em foco? Baixe a ponte (Windows)</span></a>
+    </div>
+
+    <form class="busca" role="search" onsubmit="return false">
+      <div class="campo-busca">
+        <label for="q" class="rotulo-busca" data-t="buscarAria">Buscar música</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <input type="search" id="q" placeholder="Buscar por música, anime, filme, jogo…" data-t-ph="buscarPh" autocomplete="off" enterkeyhint="search">
+      </div>
+      <label class="campo"><span data-t="f_categoria">Categoria</span>
+        <select id="cat"><option value="" data-t="todasCat">Todas as categorias</option></select>
+      </label>
+      <label class="campo"><span data-t="f_dificuldade">Dificuldade</span>
+        <select id="dif"><option value="" data-t="qualquerDif">Qualquer dificuldade</option></select>
+      </label>
+    </form>
+
+    <section class="pilha" aria-labelledby="contagem" style="gap: var(--s3)">
+      <div class="resultado-topo">
+        <p class="contagem" id="contagem" aria-live="polite" data-t="carregandoMusicas">Carregando músicas…</p>
+        <button type="button" class="botao secundario" id="limpar" hidden data-t="limparFiltros">Limpar busca e filtros</button>
+      </div>
+      <ul class="cards" id="cards" aria-busy="true">
+        <li class="esqueleto" aria-hidden="true"></li><li class="esqueleto" aria-hidden="true"></li><li class="esqueleto" aria-hidden="true"></li>
+      </ul>
+      <div class="mais-resultados" id="maisBox" hidden>
+        <p class="contagem" id="mostrando"></p>
+        <button type="button" class="botao" id="maisBtn" data-t="mostrarMais">Mostrar mais</button>
+      </div>
+    </section>
+    <section class="duvidas" aria-labelledby="duvidasTit">
+      <h2 class="secao-titulo" id="duvidasTit" data-t="duvidasTit">Dúvidas</h2>
+      <details class="duvida" id="ponte">
+        <summary><span class="duvida-icone" aria-hidden="true">?</span><span data-t="ponteOQue">O que é a Ponte do controle?</span></summary>
+        <div class="duvida-corpo recolhe-corpo" id="cardPonteCorpo"></div>
+      </details>
+    </section>
+  </main>
+
+  <footer></footer>
+</div>
+<script type="module" src="js/lista.js"></script>
+</body>
+</html>

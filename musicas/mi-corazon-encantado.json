@@ -1,0 +1,17 @@
+{
+  "titulo": "Mi Corazón Encantado",
+  "origem": "Dragon Ball GT",
+  "categoria": "anime",
+  "enviado_por": "Fundador do site",
+  "tags": [
+    "abertura",
+    "dragon ball"
+  ],
+  "observacoes": "As duas primeiras notas da frase 3 são pausas: são um Lá grave que a ocarina não alcança (a mais grave é o Si, com ↓ analógico + ↓ direcional + L). O autor da partitura tocou essas duas no piano, então é só esperar o tempo delas: a página pula sozinha.",
+  "frases": [
+    "down:A down:A up:L R down:A A down:A R up:L L",
+    "up:L up:L down:L L up:L R up:L L down:L down+dpad:L",
+    "- - down:L A down:A down:A down:L L up:L R",
+    "up:L L down:L L down:L down:L down+dpad:L down:L L up:L"
+  ]
+}

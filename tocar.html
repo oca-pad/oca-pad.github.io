@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tocar · OcaPad</title>
+<link rel="icon" type="image/svg+xml" href="img/ocarina.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Rubik:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/movimento.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <a class="marca" href="./" aria-label="OcaPad"><img class="logo-img" src="img/ocarina.svg" alt="" width="46" height="39"><span class="marca-nome">OcaPad</span></a>
+    <div class="topo-dir">
+      <a class="botao" href="./" data-t="voltarLista">← Músicas</a>
+      <div class="seletor-controle" id="controle"></div>
+      <div class="idioma-menu" id="idiomaMenu"></div>
+    </div>
+  </header>
+
+  <main class="pilha">
+    <div class="cabecalho">
+      <h1 id="titulo" data-t="carregando">Carregando…</h1>
+      <div class="meta" id="info"></div>
+    </div>
+
+    <div id="conteudo" hidden>
+      <div class="pilha">
+        <section class="coach" id="coach" aria-label="Treino" data-t-aria="treino">
+          <div class="coach-top">
+            <span class="pad" id="pad"><span class="dot" aria-hidden="true"></span><span id="padText" data-t="padNao">Controle não detectado: aperte qualquer botão do controle</span></span>
+            <a class="link-ponte" id="baixarPonte" data-ponte href="ponte-controle/ponte-controle.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="ponteCurto">Jogar com o jogo em foco? Baixe a ponte (Windows)</span></a>
+            <span class="score" id="score"></span>
+          </div>
+          <div class="msg" id="msg" role="status" aria-live="polite"></div>
+          <div class="ritmo" id="ritmoBox" hidden>
+            <div class="ritmo-barra" aria-hidden="true"><div class="ritmo-fill" id="ritmoFill"></div><div class="ritmo-marca"></div></div>
+            <span class="ritmo-texto" id="ritmoTexto"></span>
+          </div>
+          <details class="recolhe" id="opcoesTreino">
+            <summary data-t="opcoesTreino">Opções de treino</summary>
+            <div class="recolhe-corpo">
+              <div class="opts">
+                <label><input type="checkbox" id="restartPhrase"> <span data-t="optFrase">Errou: voltar pro começo da frase</span></label>
+                <label><input type="checkbox" id="restartSong"> <span data-t="optMusica">Errou: voltar pro começo da música</span></label>
+                <label><input type="checkbox" id="loopSong"> <span data-t="optLoop">Acabou: começar de novo</span></label>
+                <label id="modoRitmoLabel"><input type="checkbox" id="modoRitmo"> <span data-t="optRitmo">Modo ritmo</span></label>
+              </div>
+              <div class="coach-acoes">
+                <button type="button" class="botao" id="reset" data-t="recomecar">Recomeçar</button>
+                <button type="button" class="botao" id="gravar" data-t="gravarRitmo">Gravar ritmo</button>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <div class="legend" id="legenda" aria-label="Legenda" data-t-aria="legenda"></div>
+        <p class="sub" data-t="ordem">Primeiro o que segura, depois o botão.</p>
+
+        <div id="sheet" class="pilha"></div>
+
+        <div class="tip" id="obs" hidden></div>
+
+        <section class="cartao-bloco" aria-labelledby="tituloCompartilhar">
+          <h2 class="secao-titulo" id="tituloCompartilhar" data-t="compartilharTit">Compartilhar e editar</h2>
+          <div class="compartilhar">
+            <button type="button" class="botao" id="linkCurto" data-t="copiarLink">Copiar link</button>
+            <button type="button" class="botao" id="linkCompleto" data-t="copiarLinkCompleto">Copiar link com a música dentro</button>
+            <a class="botao" id="editarCopia" href="criar.html" data-t="editarCopia">Editar uma cópia</a>
+            <button type="button" class="botao" id="copiarRitmo" hidden data-t="copiarRitmo">Copiar ritmo (para o arquivo da música)</button>
+            <span class="aviso-copia" id="avisoCopia" role="status"></span>
+          </div>
+        </section>
+
+        <div class="tip">
+          <p data-t="dica1"><b>Para jogar e treinar junto:</b> deixe o emulador em <b>janela sem bordas</b> (em tela cheia exclusiva esta página some), coloque esta janela do lado e não minimize. A página lê o mesmo controle que o emulador, mas só enquanto ela estiver em foco.</p>
+          <p data-t="dica2">Sem o controle, toque numa nota ou use as setas → e ← do teclado para marcar onde você está.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+</div>
+<script type="module" src="js/tocar.js"></script>
+</body>
+</html>
