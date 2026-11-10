@@ -1,0 +1,15 @@
+{
+  "titulo": "Blue Bird",
+  "origem": "Naruto Shippuden",
+  "categoria": "anime",
+  "enviado_por": "Fundador do site",
+  "tags": ["naruto", "abertura", "ikimono-gakari"],
+  "observacoes": "Partitura: \"Zelda Ocarina of Time Remake TABS\". Usa o direcional para cima e para baixo junto com os botões.",
+  "frases": [
+    "dpad:L dpadup:R dpad:A A dpad:A dpadup:R",
+    "dpad:L dpadup:R dpad:A A Y A Y dpad:X",
+    "dpad:L dpadup:R dpad:A A dpad:A dpadup:R",
+    "dpadup:R dpad:X Y dpadup:R dpad:X Y",
+    "dpad:R dpad:R dpadup:R dpadup:R"
+  ]
+}

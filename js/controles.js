@@ -34,6 +34,7 @@ export const CONTROLES = {
 // 0 = de baixo, 1 = da direita, 2 = da esquerda, 3 = de cima, 4 = ombro esq., 5 = ombro dir.
 export const INDICE_GAMEPAD = { A: 1, X: 3, Y: 2, L: 4, R: 5 };
 export const DPAD_BAIXO = 13;
+export const DPAD_CIMA = 12;
 
 const ANALOGICO = '<svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="13" cy="13" r="5" fill="currentColor"/></svg>';
 const DIRECIONAL = '<svg viewBox="0 0 26 26" aria-hidden="true"><path d="M9 2h8v7h7v8h-7v7H9v-7H2V9h7z" fill="currentColor"/></svg>';
@@ -42,6 +43,7 @@ export function htmlModificador(m) {
   if (m === 'down') return '<span class="mod"><span class="seta">↓</span>' + ANALOGICO + '</span>';
   if (m === 'up') return '<span class="mod"><span class="seta">↑</span>' + ANALOGICO + '</span>';
   if (m === 'dpad') return '<span class="mod"><span class="seta">↓</span>' + DIRECIONAL + '</span>';
+  if (m === 'dpadup') return '<span class="mod"><span class="seta">↑</span>' + DIRECIONAL + '</span>';
   if (m === 'down+dpad') return '<span class="mod"><span class="seta">↓</span>' + ANALOGICO + '<span class="mais">+</span>' + DIRECIONAL + '</span>';
   return '';
 }
@@ -56,7 +58,7 @@ export function htmlNota(controle, nota) {
   return htmlModificador(nota.mods[0]) + htmlBotao(controle, nota.botao, nota.incerta ? 'incerta' : '');
 }
 
-const PALAVRAS = { '': '', up: t('m_up') + ' + ', down: t('m_down') + ' + ', dpad: t('m_dpad') + ' + ', 'down+dpad': t('m_down') + ' + ' + t('m_dpad') + ' + ' };
+const PALAVRAS = { '': '', up: t('m_up') + ' + ', down: t('m_down') + ' + ', dpad: t('m_dpad') + ' + ', dpadup: t('m_dpadup') + ' + ', 'down+dpad': t('m_down') + ' + ' + t('m_dpad') + ' + ' };
 // nome do modificador sozinho (para listas de escolha)
 export function nomeModificador(m) {
   return m === '' ? t('m_nada') : m === 'down+dpad' ? t('m_down') + ' + ' + t('m_dpad') : t('m_' + m);
@@ -77,6 +79,8 @@ export function lerModificador(gp) {
   const dpad = !!(b && b.pressed);
   if (dpad && y > 0.5) return 'down+dpad';
   if (dpad) return 'dpad';
+  const c = gp.buttons[DPAD_CIMA];
+  if (c && c.pressed) return 'dpadup';
   if (y > 0.5) return 'down';
   if (y < -0.5) return 'up';
   return '';

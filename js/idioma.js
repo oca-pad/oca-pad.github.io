@@ -53,6 +53,7 @@ const D = {
   m_up: ['↑ analógico', '↑ stick', '↑ palanca', '↑ 摇杆', '↑ スティック'],
   m_down: ['↓ analógico', '↓ stick', '↓ palanca', '↓ 摇杆', '↓ スティック'],
   m_dpad: ['↓ direcional', '↓ D-pad', '↓ cruceta', '↓ 十字键', '↓ 十字キー'],
+  m_dpadup: ['↑ direcional', '↑ D-pad', '↑ cruceta', '↑ 十字键', '↑ 十字キー'],
   analogicoEsq: ['analógico esquerdo', 'left stick', 'palanca izquierda', '左摇杆', '左スティック'],
   direcional: ['direcional', 'D-pad', 'cruceta', '十字键', '十字キー'],
   graveAgudo: ['do grave ao agudo', 'low to high', 'de grave a agudo', '从低到高', '低い音から高い音へ'],

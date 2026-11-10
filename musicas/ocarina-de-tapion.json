@@ -1,0 +1,19 @@
+{
+  "titulo": "Ocarina de Tapion",
+  "origem": "Dragon Ball Z",
+  "categoria": "anime",
+  "enviado_por": "Fundador do site",
+  "tags": [
+    "tapion",
+    "dragon ball",
+    "dbz",
+    "hildegarn"
+  ],
+  "observacoes": "Partitura: \"Zelda Ocarina of Time Remake TABS\". Usa o direcional para cima e para baixo junto com o A.",
+  "frases": [
+    "down:L down:L R down:X dpadup:A dpad:A dpadup:A",
+    "R down:A dpad:A dpad:A dpadup:A dpad:A down:A",
+    "down:L down:L R down:X dpadup:A dpad:A dpadup:A",
+    "R down:A dpad:A dpad:A down:A down:A R down:R R"
+  ]
+}

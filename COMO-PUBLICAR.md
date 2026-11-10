@@ -38,7 +38,7 @@ Copie um arquivo da pasta `musicas`, renomeie (só letras minúsculas sem acento
 
 - **categoria:** `zelda` (série The Legend of Zelda), `anime`, `jogo` (outros jogos), `filme`, `serie`, `musica` ou `outro`.
 - **Notas** no padrão do Switch, separadas por espaço: `L`, `R`, `A`, `X`, `Y`. O site converte sozinho para Xbox (A→B, X→Y, Y→X, L→LB, R→RB) e PlayStation (A→Bolinha, X→Triângulo, Y→Quadrado, L→L1, R→R1).
-- **O que segurar** vem antes, com dois-pontos: `up:` (analógico ↑), `down:` (analógico ↓), `dpad:` (direcional ↓), `down+dpad:` (os dois).
+- **O que segurar** vem antes, com dois-pontos: `up:` (analógico ↑), `down:` (analógico ↓), `dpad:` (direcional ↓), `dpadup:` (direcional ↑), `down+dpad:` (os dois).
 - **Pausa** (nota que a ocarina não alcança, ou espera): `-`. Aparece como "pausa" e a página pula sozinha. A ocarina vai do Si grave (`down+dpad:L`) até o Ré agudo (`X`) e o que os modificadores alcançarem acima; abaixo disso, use pausa.
 - Nota que aceita dois jeitos: `dpad/down+dpad:A`. Nota ainda não confirmada: termina com `?` (aparece pontilhada).
 - **Redes sociais de quem enviou** (opcional, até 5): `"redes": [{ "tipo": "instagram", "valor": "fulano" }]`. Tipos: `instagram`, `x`, `youtube`, `twitch`, `tiktok`. Só o usuário é guardado; o site monta o link.
