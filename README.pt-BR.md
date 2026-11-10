@@ -4,7 +4,7 @@
 
 <h1 align="center">OcaPad</h1>
 
-<p align="center"><a href="README.md">English</a> · <b>Português</b></p>
+<p align="center"><a href="README.md">English</a> · <b>Português</b> · <a href="README.es.md">Español</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a></p>
 
 <p align="center">
   <b>Músicas para tocar na ocarina com o controle, conferindo nota por nota.</b><br>
