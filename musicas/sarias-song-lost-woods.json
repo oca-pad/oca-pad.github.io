@@ -1,0 +1,15 @@
+{
+  "titulo": "Saria's Song (Lost Woods)",
+  "origem": "The Legend of Zelda: Ocarina of Time",
+  "categoria": "zelda",
+  "enviado_por": "Fundador do site",
+  "tags": ["saria", "lost woods", "floresta perdida", "canção da saria", "completa"],
+  "observacoes": "Versão completa da música da Floresta Perdida, transcrita de um vídeo. A versão curta que se aprende no jogo é a \"Canção da Saria\".",
+  "frases": [
+    "R A Y R A Y R A Y up:X X Y dpadup:Y Y down:A dpad:R L dpad:R down:A dpad:R",
+    "R A Y R A Y R A Y up:X X Y dpadup:Y up:X Y down:A Y down:A L dpad:R",
+    "L dpad:R R down:A A Y dpadup:Y Y dpad:R L dpad:R R down:A A Y dpadup:Y X up:X",
+    "L dpad:R R down:A A Y dpadup:Y Y dpad:R L down:L R dpad:R down:A R A down:A Y A dpadup:Y Y X dpadup:Y",
+    "up:X up+dpadup:X X up:X up:X up:X up:X up:X"
+  ]
+}

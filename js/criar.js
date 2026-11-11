@@ -13,7 +13,7 @@ let controle = ligarEscolhaControle(c => { controle = c; desenhar(); preencherSe
 // ---------- modelo ----------
 // item: { p: pausa?, b: botão, m: modificador, e: espera em ms desde a nota anterior, f: começa frase }
 const ESPERA_PADRAO = 500;
-const MODS = ['', 'up', 'down', 'dpad', 'dpadup', 'down+dpad'];
+const MODS = ['', 'up', 'down', 'dpad', 'dpadup', 'down+dpad', 'up+dpadup'];
 let atual = novaMusica();
 let sel = null;          // índice do item escolhido
 

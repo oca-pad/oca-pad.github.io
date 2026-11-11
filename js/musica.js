@@ -14,7 +14,7 @@
 // e o que os modificadores alcançarem acima disso. Abaixo do Si grave, use pausa.
 
 export const BOTOES = ['L', 'R', 'A', 'X', 'Y'];
-export const MODIFICADORES = ['', 'up', 'down', 'dpad', 'dpadup', 'down+dpad'];
+export const MODIFICADORES = ['', 'up', 'down', 'dpad', 'dpadup', 'down+dpad', 'up+dpadup'];
 export const CATEGORIAS = {
   zelda: 'The Legend of Zelda', anime: 'Anime', jogo: 'Outros jogos', filme: 'Filme', serie: 'Série', musica: 'Música', outro: 'Outro'
 };
@@ -66,7 +66,7 @@ export function lerNota(token) {
   botao = botao.trim().toUpperCase();
   if (!BOTOES.includes(botao)) throw new Error('botão desconhecido "' + botao + '" em "' + token + '" (use L, R, A, X ou Y)');
   for (const m of mods) {
-    if (!MODIFICADORES.includes(m)) throw new Error('modificador desconhecido "' + m + '" em "' + token + '" (use up, down, dpad, dpadup ou down+dpad)');
+    if (!MODIFICADORES.includes(m)) throw new Error('modificador desconhecido "' + m + '" em "' + token + '" (use up, down, dpad, dpadup, down+dpad ou up+dpadup)');
   }
   return { botao, mods, incerta };
 }

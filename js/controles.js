@@ -44,6 +44,7 @@ export function htmlModificador(m) {
   if (m === 'up') return '<span class="mod"><span class="seta">↑</span>' + ANALOGICO + '</span>';
   if (m === 'dpad') return '<span class="mod"><span class="seta">↓</span>' + DIRECIONAL + '</span>';
   if (m === 'dpadup') return '<span class="mod"><span class="seta">↑</span>' + DIRECIONAL + '</span>';
+  if (m === 'up+dpadup') return '<span class="mod"><span class="seta">↑</span>' + ANALOGICO + '<span class="mais">+</span>' + DIRECIONAL + '</span>';
   if (m === 'down+dpad') return '<span class="mod"><span class="seta">↓</span>' + ANALOGICO + '<span class="mais">+</span>' + DIRECIONAL + '</span>';
   return '';
 }
@@ -58,10 +59,10 @@ export function htmlNota(controle, nota) {
   return htmlModificador(nota.mods[0]) + htmlBotao(controle, nota.botao, nota.incerta ? 'incerta' : '');
 }
 
-const PALAVRAS = { '': '', up: t('m_up') + ' + ', down: t('m_down') + ' + ', dpad: t('m_dpad') + ' + ', dpadup: t('m_dpadup') + ' + ', 'down+dpad': t('m_down') + ' + ' + t('m_dpad') + ' + ' };
+const PALAVRAS = { '': '', up: t('m_up') + ' + ', down: t('m_down') + ' + ', dpad: t('m_dpad') + ' + ', dpadup: t('m_dpadup') + ' + ', 'down+dpad': t('m_down') + ' + ' + t('m_dpad') + ' + ', 'up+dpadup': t('m_up') + ' + ' + t('m_dpadup') + ' + ' };
 // nome do modificador sozinho (para listas de escolha)
 export function nomeModificador(m) {
-  return m === '' ? t('m_nada') : m === 'down+dpad' ? t('m_down') + ' + ' + t('m_dpad') : t('m_' + m);
+  return m === '' ? t('m_nada') : m === 'down+dpad' ? t('m_down') + ' + ' + t('m_dpad') : m === 'up+dpadup' ? t('m_up') + ' + ' + t('m_dpadup') : t('m_' + m);
 }
 export function descrever(controle, mod, botao) {
   return PALAVRAS[mod] + CONTROLES[controle].rotulo[botao];
@@ -80,7 +81,7 @@ export function lerModificador(gp) {
   if (dpad && y > 0.5) return 'down+dpad';
   if (dpad) return 'dpad';
   const c = gp.buttons[DPAD_CIMA];
-  if (c && c.pressed) return 'dpadup';
+  if (c && c.pressed) return y < -0.5 ? 'up+dpadup' : 'dpadup';
   if (y > 0.5) return 'down';
   if (y < -0.5) return 'up';
   return '';
